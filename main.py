@@ -21,11 +21,11 @@ async def say_hello(user: str, bet: int):
     if users[user] < bet:
         raise Exception(f"Balance is too low")
     cards = []
-    for i in range(40):
+    for i in range(80):
         value, color = core.get_value(bet)
         # value, color = i, core.Color.gray
         cards.append(Card(style=color.name, value=value))
-    win = cards[19].value
+    win = cards[54].value
     users[user] = users[user] - bet + win
     return Result(slots=cards, win=win)
 
